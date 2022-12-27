@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <title>Admin-Home</title>
+  <link rel="icon" type="img" href="/logo.jpg">
+  <style>
+    #ann{
+      padding-left:350px;
+    }
+    #sub{
+      padding-left:650px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!--Navbar-->
+  <%- include('./partials/nav.ejs') %>
+
+  <br><br>
+
+  <center><h1><u>Admin Dashboard</u></h1></center>
+  <br><br><br>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card text-dark bg-info mb-3" style="max-width: 22rem;">
+                <center><div class="card-header"><i class="fa-solid fa-chart-line"></i>Customers</div></center>
+                <div class="card-body">
+                 <center><h5 class="card-title"><%=custcount %></h5></center> 
+                <!-- <p class="card-text"></p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card text-dark bg-light mb-3" style="max-width: 22rem;">
+               <center><div class="card-header"><i class="fa-solid fa-chart-line"></i>Employees</div></center> 
+                <div class="card-body">
+                  <center><h5 class="card-title"><%=empcount %></h5></center>
+                  <!-- <p class="card-text"></p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card text-white bg-dark mb-3" style="max-width: 22rem;">
+                <center><div class="card-header"><i class="fa-solid fa-chart-line"></i>Services</div></center>
+                <div class="card-body">
+                  <center> <h5 class="card-title">1000+</h5></center>
+                 
+                  <!-- <p class="card-text"></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br><br>
+        <hr>
+
+        <br><br>
+        <form action="/home1" method="post" >
+         <center><h2>Make Public announcement to all users</h2></center>
+          <div class="input-group" id="ann">
+            <textarea rows="6" cols="80" name="announcement" ></textarea>
+          </div>
+          <div id="sub">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+          
+        </form>
+
+
+        <br><br>
+        <br>
+        <hr>
+        <br>
+        
+
+        <!--Footer-->
+        <%- include('./partials/footer.ejs') %>
+
+
+
+
+          <!-- JQuery -->
+          <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <!-- Bootstrap tooltips -->
+          <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+          <!-- Bootstrap core JavaScript -->
+          <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+          <!-- MDB core JavaScript -->
+          <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+          <!-- Optional JavaScript; choose one of the two! -->
+
+          <!-- Option 1: Bootstrap Bundle with Popper -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+          <!-- Option 2: Separate Popper and Bootstrap JS -->
+          <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+          <script>
+            AOS.init();
+          </script>
+
+
+</body>
+
+</html>

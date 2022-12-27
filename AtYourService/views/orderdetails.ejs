@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- <link rel="stylesheet" href="packersandmovers.css"> -->
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <title>Order Details</title>
+  <link rel="icon" type="img" href="/logo.jpg">
+</head>
+
+<body>
+  <!--Navbar-->
+  <%- include('./partials/nav.ejs') %>
+  <br>
+    <center><strong><h1 style="color: rgb(17, 212, 95);">Order Summary</h1></strong></center>
+  
+    <hr>
+    <div class="details content">
+     
+
+      <pre><h2> Service Requested: <i><%= order.servicename %></i></h2></pre>
+     
+         <% if(order.employeeid != "sorryyy") {%>
+      <% employees.forEach(element=> { %>
+        <% if(element._id==order.employeeid) {%>
+
+         <pre> <h2>      Employee details :- </h2></pre>
+          <pre><h3>            Name: <%= element.firstname%></h3></pre>
+          <pre><h3>            Email :<%= element.email %></h3></pre>
+          <pre><h3>            Profession:<%= element.profession %></h3></pre>
+          <pre><h3>            Residential address:<%= element.address %></h3></pre>
+          <pre><h3>            Contact number:<%= element.contactnumber %></h3></pre>
+
+          <% } %>
+            <% }) %>
+              <% if(order.cost !="-1" ) {%>               
+                <pre><h2><i>  Cost of the order :<%= order.cost %></i></pre> <br>
+                  <center><button class="btn btn-success">Pay</button></center>
+                </h2>
+                <% }%>
+            <% }%>  
+         
+            <%if(order.employeeid == "sorryyy") {%>
+             <center>
+              <h2> We are sorry for the inconvinience</h2><br>
+              <h2>Currently, there are no technicians available for the requested service </h2><br>
+              <h2>Please try after some time</h2><br>
+              <% }%>
+                </center>
+            
+
+    </div>
+
+
+    <!--Footer-->
+    <%- include('./partials/footer.ejs') %>
+
+
+      <!-- JQuery -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <!-- MDB core JavaScript -->
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+      <!-- Optional JavaScript  choose one of the two! -->
+
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+
+
+
+</body>
+
+</html>
